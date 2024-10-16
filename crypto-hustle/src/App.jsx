@@ -15,7 +15,7 @@ function App() {
     /**async func that uses fetch to make call to API */
     const fetchAllCoinData = async () => {
       const response = await fetch(
-        "https://min-api.cryptocompare.com/data/all/coinlist?&api_key" + API_KEY
+        `https://min-api.cryptocompare.com/data/all/coinlist?&api_key` + API_KEY
       );
       /**save JSON response returned to the list state variable */
       const json = await response.json();
