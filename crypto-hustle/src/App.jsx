@@ -37,7 +37,11 @@ function App() {
         {/**use Object.entries() to get an array of key-value pairs from list.Data */}
         {list && Object.entries(list.Data).map(([coin]) => {
           list.Data[coin].PlatformType === "blockchain" ? (
-            <li key={list.Data[coin].FullName}>{list.Data[coin].FullName}</li>
+            <CoinInfo
+              image={list.Data[coin].ImageUrl}
+              name={list.Data[coin].FullName}
+              symbol={list.Data[coin].Symbol}
+            />
           ) : null
         })}
       </ul>
