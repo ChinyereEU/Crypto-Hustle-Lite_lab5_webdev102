@@ -27,7 +27,20 @@ function App() {
   }, []);
 
   return (
-    
+    /**return and render on page, after making hook & calling API (outside return()) */
+    <div className="whole-page">
+      <h1>My Crypto List</h1>
+      {/**ul list to display each coin */}
+      <ul>
+        {/**check if API is still waiting on results, only fill up list when API call is returned */}
+        {/**use Object.entries() to get an array of key-value pairs from list.Data */}
+        {list && Object.entries(list.Data).map(([coin]) => {
+          list.Data[coin].PlatformType === "blockchain" ? (
+            <li key={list.Data[coin].FullName}>{list.Data[coin].FullName}</li>
+          ) : null
+        })}
+      </ul>
+    </div>
   )
 };
 
